@@ -1,38 +1,339 @@
+/* Fuente moderna */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
 .App {
   text-align: center;
+  margin-top: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Barra de búsqueda */
+.searchBar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 2rem;
+}
+
+.searchBar input[type="text"] {
+  width: 40%;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.searchBar input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.searchBar button {
+  padding: 0.5rem 1.5rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchBar button:hover {
+  background-color: #0056b3;
+}
+
+/* Sección de Películas */
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.movie {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.movie img {
+  width: 100%;
+  height: 350px;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
+/* Título de la película */
+.movie-title {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.movie-details {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.movie-details p {
+  margin: 0.5rem 0;
+}
+
+.movie-detailsBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.movie-detailsBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo del título en la página principal */
+.text-center h1 a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Hace que el color del enlace herede el color del texto del padre */
+}
+
+.text-center h1 {
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  font-weight: 700;
+  color: #1d3557; /* Color oscuro y sofisticado */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  transition: all 0.3s ease; /* Transición para efecto de hover */
+}
+
+.text-center h1:hover {
+  color: #e63946; /* Cambio de color al pasar el cursor */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Efecto de sombra más fuerte al pasar el cursor */
+}
+
+/* Modal (si tienes uno) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-main {
+  background: white;
+  width: 80%;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+/* Paginación */
+.pages {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pages b {
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pages b:hover {
+  background-color: #0056b3;
+}
+
+.actualPage {
+  font-size: 1.5rem;
+  background-color: #0056b3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .movie {
+    width: 45%;
+  }
+
+  .movie img {
+    height: 250px;
+  }
+
+  .searchBar input[type="text"] {
+    width: 60%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 480px) {
+  .movie {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie img {
+    height: 200px;
   }
+
+  .searchBar input[type="text"] {
+    width: 70%;
+  }
+
+  .searchBar button {
+    width: 100%;
+  }
+}
+
+/* Botones Home y Back */
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Estilos adicionales para FilmDetails */
+.film-details-container {
+  background-color: #141414;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.film-details-card {
+  background-color: #333;
+  border: none;
+}
+
+.film-details-img {
+  border-radius: 10px;
+}
+
+.film-details-body {
+  padding: 20px;
+}
+
+.film-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e50914;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.film-title:hover {
+  color: #b81d24;
+}
+
+.film-description {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.film-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.film-subtitle:hover {
+  color: #e50914;
+}
+
+.film-info-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #222;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.film-section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e50914;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.film-section-title:hover {
+  color: #b81d24;
+}
+
+.detail-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.detail-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }

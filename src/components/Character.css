@@ -1,0 +1,47 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.card-title a:hover {
+  color: #0056b3;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.row-cols-md-2 > .col {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-5 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

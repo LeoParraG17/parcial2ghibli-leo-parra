@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
-import '../App.css'; // Adjust the path to point to the correct location of App.css
+import '../App.css'; 
 
 const FilmDetails = () => {
   const { id } = useParams();

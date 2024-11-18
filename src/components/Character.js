@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import Paginator from "./Paginator";
-import '../App.css'; // Asegúrate de que el archivo sea el correcto
+import '../App.css'; 
 
 const Character = () => {
   const [films, setFilms] = useState([]);
